@@ -5,6 +5,7 @@ body {
     background-size: 300% 300%; /* Увеличенный размер для анимации */
     animation: gradientAnimation 12s ease infinite; /* Плавная бесконечная анимация */
     color: #FFF;
+    font-family: "Comfortaa", sans-serif;
 }
 
 a {
