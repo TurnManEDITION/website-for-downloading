@@ -1,13 +1,14 @@
 body {
     margin: 0;
     height: 100vh;
-    background: radial-gradient(circle, #ff9a9e, #fad0c4, #fbc2eb, #8fd3f4);
+    background: radial-gradient(circle, #514545, #331e18, #343133, #1a2a31);
     background-size: 300% 300%; /* Увеличенный размер для анимации */
     animation: gradientAnimation 12s ease infinite; /* Плавная бесконечная анимация */
+    color: #FFF;
 }
 
 a {
-    color: #8fd3f4;
+    color: #e1f4fd;
 }
 
 .cursor {
@@ -116,7 +117,8 @@ main {
 .header {
     position: relative; /* Обычное положение в начале страницы */
     width: 100%;
-    background-color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    background-color: rgba(33, 33, 33, 0.8);
     color: #fff;
     text-align: center;
     padding: 10px 0;
