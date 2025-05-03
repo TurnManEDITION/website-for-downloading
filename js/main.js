@@ -147,7 +147,7 @@ function createBubble() {
 
     setTimeout(() => {
         bubble.remove();
-    }, 4000);
+    }, 6000);
 }
 
-setInterval(createBubble, 2000);
+setInterval(createBubble, 1500);
