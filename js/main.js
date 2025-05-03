@@ -132,7 +132,3 @@ document.getElementById("searchInput").addEventListener("input", function() {
     }
 });
 
-if (/android/i.test(navigator.userAgent)) {
-    document.getElementById("cursor").style.display = "none";
-}
-

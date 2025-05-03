@@ -1,3 +1,9 @@
+@media screen and (max-width: 768px) {
+    #cursor {
+        display: none;
+    }
+}
+
 body {
     margin: 0;
     height: 100vh;
