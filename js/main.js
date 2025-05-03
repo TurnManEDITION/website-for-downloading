@@ -91,9 +91,6 @@ function getResultsText(count) {
     }
 }
 
-
-
-
 const headers = document.getElementById('header');
 
 window.addEventListener('scroll', () => {
@@ -101,5 +98,36 @@ window.addEventListener('scroll', () => {
         headers.classList.add('fixed'); // Добавляем класс для фиксации
     } else {
         headers.classList.remove('fixed'); // Убираем класс, если вернулись вверх
+    }
+});
+
+function getLastWordClean(str) {
+    let words = str.value.trim().split(/\s+/);
+    return words.length ? words[words.length - 1].replace(/[.,!?;]$/, '') : '';
+}
+
+document.getElementById("searchInput").addEventListener("input", function() {
+    let input = this.value.toLowerCase().trim();
+    let response = document.getElementById("resultCount");
+    let answers = {
+        "привет": "Здравствуйте! Вы нашли фишку сайта, если вы угадаете, что сюда можно вводить, то вам будет ответ",
+        "размер экрана": "Размер экрана: " + screen.width + " на " + screen.height,
+        "кто самый лучший учитель по биологии?": "Анастасия Владиславовна конечно же!",
+        "кто самый лучший учитель по истории?": "Алексей Эдуардович конечно же!",
+        "кто самый лучший учитель по информатике?": "Павел Александрович конечно же!",
+        "кто самый лучший учитель по физике?": "Наталья Николаевна конечно же!",
+        "кто самый лучший учитель по химии?": "Анджела Рудольфовна конечно же!"
+    };
+
+    if (answers[input]) {
+        response.textContent = answers[input];
+
+        // Через 2 секунды изменяем текст
+        setTimeout(() => {
+            response.textContent = "Шутка! Это не вы!";
+        }, 3000);
+        setTimeout(() => {
+            response.textContent = `Ладно, это шутка! Конечно же лучший учитель по ${getLastWordClean(searchInput)} — это вы!`;
+        }, 5000);
     }
 });
