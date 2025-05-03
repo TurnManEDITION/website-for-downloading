@@ -5,10 +5,10 @@
         border: 2px solid #ffffff;
         border-radius: 50%;
         position: absolute;
-        pointer-events: none; /* Чтобы круг не мешал кликам */
+        pointer-events: none;
         box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-        transition: opacity 0.2s ease, transform 0.1s ease; /* Плавность появления */
-        opacity: 0; /* Скрываем круг изначально */
+        transition: opacity 0.2s ease, transform 0.1s ease;
+        opacity: 0;
         z-index: 1000;
     }
 }
@@ -21,6 +21,7 @@ body {
     animation: gradientAnimation 12s ease infinite; /* Плавная бесконечная анимация */
     color: #FFF;
     font-family: "Comfortaa", sans-serif;
+    z-index: 100;
 }
 
 a {
@@ -36,13 +37,8 @@ header {
     padding: 10px;
 }
 
-#searchInput {
-    width: 80%;
-    padding: 10px;
-    font-size: 16px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 5px;
+header > h1 {
+    color: #D6EAF8;
 }
 
 main {
@@ -54,10 +50,11 @@ main {
     margin-bottom: 15px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    background-color: rgba(214, 234, 248, 0.05);
 }
 
 .item h2 {
-    color: #00ff99;
+    color: #80abff;
 }
 
 #searchInput {
@@ -67,6 +64,16 @@ main {
     margin: 10px 5px 10px 0;
     border: none;
     border-radius: 5px;
+    color: #ffffff;
+    background-color: rgba(71, 177, 243, 0.645);
+    font-family: "Comfortaa", sans-serif;
+}
+.inptxt::placeholder {
+    color: #000285; /* Серый цвет */
+}
+
+.inptxt:focus {
+    background-color: rgba(118, 203, 255, 0.645);
 }
 
 #searchButton {
@@ -74,36 +81,45 @@ main {
     font-size: 16px;
     border: none;
     border-radius: 5px;
-    background-color: #00ff99;
-    color: #ffffff;
+    background-color: #007BFF;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.5);
+    color: #FFF5E1;
     cursor: pointer;
     transition: background-color 0.3s;
+    font-family: "Comfortaa", sans-serif;
 }
 
 #searchButton:hover {
-    background-color: #00cc77;
+    background-color: #0056b3;
+}
+#searchButton:active {
+    background-color: #004080;
 }
 
 #resultCount {
     font-size: 18px;
     margin-top: 10px;
-    color: #00ff99;
+    color: #B0E0E6;
 }
 
 .download-button {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
-    color: #ffffff;
+    color: #FFF5E1;
     text-decoration: none;
-    background-color: #00ff99;
+    background-color: #007BFF;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.5);
     transition: background-color 0.3s;
 }
 
 .download-button:hover {
-    background-color: #00cc77;
+    background-color: #0056b3;
+}
+
+.download-button:active {
+    background-color: #004080;
 }
 
 @keyframes gradientAnimation {
@@ -144,4 +160,23 @@ main {
 
 .highlight {
     background-color: #3333331a;
+}
+
+.bubble {
+    position: absolute; /* Теперь пузыри двигаются вместе со страницей */
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.7);
+    background: transparent;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    animation: float 4s linear forwards;
+    z-index: -1; /* Пузыри остаются позади контента */
+}
+
+
+@keyframes float {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    90% { transform: translateY(-150px) scale(1); opacity: 1; }
+    100% { transform: translateY(-150px) scale(0); opacity: 0; } /* Эффект лопания */
 }

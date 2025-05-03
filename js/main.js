@@ -132,3 +132,22 @@ document.getElementById("searchInput").addEventListener("input", function() {
     }
 });
 
+function createBubble() {
+    let bubble = document.createElement("div");
+    bubble.classList.add("bubble");
+
+    // Пузыри появляются в пределах документа, а не фиксируются на экране
+    let x = Math.random() * (document.documentElement.clientWidth - 80);
+    let y = window.scrollY + Math.random() * window.innerHeight;
+
+    bubble.style.left = `${x}px`;
+    bubble.style.top = `${y}px`;
+
+    document.body.appendChild(bubble);
+
+    setTimeout(() => {
+        bubble.remove();
+    }, 4500);
+}
+
+setInterval(createBubble, 500);
