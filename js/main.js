@@ -150,4 +150,4 @@ function createBubble() {
     }, 4500);
 }
 
-setInterval(createBubble, 500);
+setInterval(createBubble, 1000);
