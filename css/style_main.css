@@ -1,6 +1,15 @@
-@media screen and (max-width: 768px) {
-    #cursor {
-        display: none;
+@media (min-width: 768px) {
+    .cursor {
+        width: 20px;
+        height: 20px;
+        border: 2px solid #ffffff;
+        border-radius: 50%;
+        position: absolute;
+        pointer-events: none; /* Чтобы круг не мешал кликам */
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+        transition: opacity 0.2s ease, transform 0.1s ease; /* Плавность появления */
+        opacity: 0; /* Скрываем круг изначально */
+        z-index: 1000;
     }
 }
 
@@ -16,19 +25,6 @@ body {
 
 a {
     color: #e1f4fd;
-}
-
-.cursor {
-    width: 20px;
-    height: 20px;
-    border: 2px solid #ffffff;
-    border-radius: 50%;
-    position: absolute;
-    pointer-events: none; /* Чтобы круг не мешал кликам */
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-    transition: opacity 0.2s ease, transform 0.1s ease; /* Плавность появления */
-    opacity: 0; /* Скрываем круг изначально */
-    z-index: 1000;
 }
 
 .container {
