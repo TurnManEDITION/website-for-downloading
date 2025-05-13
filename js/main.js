@@ -118,7 +118,7 @@ document.getElementById("searchInput").addEventListener("input", function() {
         "кто самый лучший учитель по физике?": "Наталья Николаевна конечно же!",
         "кто самый лучший учитель по химии?": "Анджела Рудольфовна конечно же!"
     };
-
+    /*
     if (answers[input]) {
         response.textContent = answers[input];
 
@@ -130,6 +130,7 @@ document.getElementById("searchInput").addEventListener("input", function() {
             response.textContent = `Ладно, это шутка! Конечно же лучший учитель по ${getLastWordClean(searchInput)} — это вы!`;
         }, 5000);
     }
+    */
 });
 
 function createBubble() {
