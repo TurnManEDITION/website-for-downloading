@@ -118,6 +118,7 @@ document.getElementById("searchInput").addEventListener("input", function() {
         "кто самый лучший учитель по физике?": "Наталья Николаевна конечно же!",
         "кто самый лучший учитель по химии?": "Анджела Рудольфовна конечно же!"
     };
+    response.textContent = answer [input];
     /*
     if (answers[input]) {
         response.textContent = answers[input];
